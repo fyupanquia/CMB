@@ -418,7 +418,7 @@ class CMB
                             }
                         }
                         if (count($pre_myfields) && strlen($pre_sql_magic)) {
-                            $pre_sql_magic = "INSERT INTO {$table} (".implode(",", $fields).") values ".rtrim($pre_sql_magic,",").";";
+                            $pre_sql_magic = "INSERT INTO `{$table}` (".implode(",", $fields).") values ".rtrim($pre_sql_magic,",").";";
                             switch ($version) {
                                 case '1':
                                     $sql_magic .= $pre_sql_magic;
@@ -509,9 +509,9 @@ class CMB
                 $__params = [];
                 $__params["{$crudtype}"] = $$crudtype;
                 $__params["pdo"] = self::solvePDO($params);
-                if ($params["pdo"]) {
+                //if ($params["pdo"]) {
                     $rsp   =  $__params;
-                }
+                //}
             } else {
                 self::addLastErrorMessages(self::getDefaultErrorMessage(7,["@crudtype"=>$strCRUDType]));
             }
@@ -647,7 +647,7 @@ class CMB
                         }
 
                         if (strlen($_sql_magic) && count($__fields)) {
-                            $_sql_magic = "DELETE FROM {$table} WHERE ".rtrim($_sql_magic,"OR").";";
+                            $_sql_magic = "DELETE FROM `{$table}` WHERE ".rtrim($_sql_magic,"OR").";";
                             switch ($version) {
                                 case '1':
                                     $sql_magic .= $_sql_magic;
@@ -839,7 +839,7 @@ class CMB
                                     $myfields = []; // fields for each sentence
                                     $mywheres = []; // wheres for each sentence
                                     $haserror = false;
-                                    $mysql_magic = "UPDATE {$table} SET ";
+                                    $mysql_magic = "UPDATE `{$table}` SET ";
                                     foreach ($fields as $iii => $val) {
                                         $fixOperatorUpdateSentence = self::fixOperatorUpdateSentence($i, $ii, $iii);
                                         if (is_array($fixOperatorUpdateSentence)) {

@@ -113,9 +113,9 @@
 - **Return** : Boolean, true if all is right, false if not.
 - **Example** : 
 				```
-					CMB::insertMassive // 1
-					CMB::insertMassiveT // 2
-					CMB::insertMassiveTv2 // 3
+					CMB::insert($params, 1)
+					CMB::insert($params, 2)
+					CMB::insert($params, 3) // By default
 				```
 ### insertMassive
 - **Description** : Execute multiple INSERT sentences NOT TRANSACTIONAL
@@ -193,7 +193,7 @@
 - **Return** : Boolean, true if all is right, false if not.
 - **Example** : 
 			```
-			CMB::insertMassiveT([
+			CMB::insertMassiveTv2([
 								"inserts"=>[
 									[
 										"users",
@@ -223,9 +223,9 @@
 - **Return** : Boolean, true if all is right, false if not.
 - **Example** : 
 				```
-					CMB::updateMassive // 1
-					CMB::updateMassiveT // 2
-					CMB::updateMassiveTv2 // 3
+					CMB::update($params, 1)
+					CMB::update($params, 2)
+					CMB::update($params, 3) // By default
 				```
 ### updateMassive
 - **Description** : Execute multiple UPDATE sentences NOT TRANSACTIONAL
@@ -336,9 +336,9 @@
 - **Return** : Boolean, true if all is right, false if not.
 - **Example** : 
 				```
-					CMB::deleteMassive // 1
-					CMB::deleteMassiveT // 2
-					CMB::deleteMassiveTv2 // 3
+					CMB::delete($params, 1)
+					CMB::delete($params, 2)
+					CMB::delete($params, 3) // By default
 				```
 ### deleteMassive
 - **Description** : Execute multiple DELETE sentences NOT TRANSACTIONAL
